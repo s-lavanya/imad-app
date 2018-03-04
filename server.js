@@ -6,8 +6,9 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleOne = {
-    title: 'Article-one | Lavanya sanagavarapu',
+var articles = {
+    `article-One: {
+        title: 'Article-one | Lavanya sanagavarapu',
     heading: 'Article-one',
     date: 'feb 14, 2018',
     content: ` <p>
@@ -23,6 +24,42 @@ var articleOne = {
                  <p>
                     This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
                 </p>`
+    },
+    `article-Two: {
+        title: 'Article-two | Lavanya sanagavarapu',
+    heading: 'Article-two',
+    date: 'feb 14, 2018',
+    content: `<p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                </p>
+                 <p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                </p>
+                 <p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                </p>
+                 <p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                </p>`
+    },
+    `article-Three: {
+        title: 'Article-three | Lavanya sanagavarapu',
+        heading: 'Article-three',
+        date: 'feb 14, 2018',
+        content: `<p> 
+                    This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                     </p>
+                     <p>
+                        This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                     </p>
+                     <p>
+                        This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle. 
+                    </p>
+                    <p>
+                        This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                     </p>`
+                  
+    }
 };
 
 function createTemplate(data) {
@@ -77,8 +114,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {

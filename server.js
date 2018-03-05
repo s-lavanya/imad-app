@@ -6,28 +6,29 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articles = {
-    `article-One: {
-        title: 'Article-one | Lavanya sanagavarapu',
-    heading: 'Article-one',
-    date: 'feb 14, 2018',
-    content: ` <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
-                </p>
-                 <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
-                </p>
-                
-                 <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle.
-                </p>
-                 <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
-                </p>`
+var articles = { 
+    `articleOne: {
+        title: 'Article one | Lavanya sanagavarapu',
+        heading: 'Article one',
+        date: 'feb 14, 2018',
+        content: ` 
+                    <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p>                                                                                                            
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p>
+                    
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle.
+                    </p>
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p> `
     },
-    `article-Two: {
-        title: 'Article-two | Lavanya sanagavarapu',
-    heading: 'Article-two',
+    `articleTwo: {
+        title: 'Article two | Lavanya sanagavarapu',
+    heading: 'Article two',
     date: 'feb 14, 2018',
     content: `<p>
                     This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
@@ -42,9 +43,9 @@ var articles = {
                     This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
                 </p>`
     },
-    `article-Three: {
-        title: 'Article-three | Lavanya sanagavarapu',
-        heading: 'Article-three',
+    `articleThree: {
+        title: 'Article Three | Lavanya sanagavarapu',
+        heading: 'Article Three',
         date: 'feb 14, 2018',
         content: `<p> 
                     This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
@@ -59,7 +60,7 @@ var articles = {
                         This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
                      </p>`
                   
-    }
+    },
 };
 
 function createTemplate(data) {
@@ -106,6 +107,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -114,10 +122,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/:articleName', function (req, res) {
-    var articleName = req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
-});
+
 
 
 

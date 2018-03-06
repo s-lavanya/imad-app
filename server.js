@@ -6,6 +6,27 @@ var app = express();
 app.use(morgan('combined'));
 
 
+var content = {
+    title: 'Article One | Lavanya sanagavarapu',
+    heading: 'Article one',
+    date: 'feb 14, 2018',
+    content: `
+                <p>
+                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                </p>
+                 <p>
+                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                </p>
+                
+                 <p>
+                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle.
+                </p>
+                 <p>
+                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                </p>`
+};
+
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));

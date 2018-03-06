@@ -4,5 +4,5 @@ element.innerHTML = 'New value';
 var img = document.getElementById('madi');
 img.onclick = function () {
     
-    var interval = setinterval(moveleft,100);
+    var interval = setinterval(moveRight, 100);
 };

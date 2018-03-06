@@ -24,29 +24,29 @@ var articles = {
                     </p>
                      <p>
                         This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
-                    </p> `
+                    </p>`
     },
     `article-two: {
         title: 'Article two | Lavanya sanagavarapu',
-    heading: 'Article two',
-    date: 'feb 14, 2018',
-    content: `<p>
-                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
-                </p>
-                 <p>
-                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
-                </p>
-                 <p>
-                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
-                </p>
-                 <p>
-                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
-                </p>`
+        heading: 'Article two',
+        date: 'feb 15, 2018',
+        content: `<p>
+                        This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                    </p>
+                     <p>
+                        This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                    </p>
+                     <p>
+                        This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                    </p>
+                     <p>
+                        This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                    </p>`
     },
     `article-three: {
         title: 'Article Three | Lavanya sanagavarapu',
         heading: 'Article Three',
-        date: 'feb 14, 2018',
+        date: 'feb 16, 2018',
         content: `<p> 
                     This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
                      </p>

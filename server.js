@@ -5,26 +5,64 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne = {
-    title: 'Article One | Lavanya sanagavarapu',
-    heading: 'Article one',
-    date: 'feb 14, 2018',
-    content: `
-                <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+var articles = {
+    ``article-one = {
+        title: 'Article One | Lavanya sanagavarapu',
+        heading: 'Article one',
+        date: 'feb 14, 2018',
+        content: `
+                    <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p>
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p>
+                    
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle.
+                    </p>
+                     <p>
+                        This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    </p>`
+    },
+     `article-two = {
+        title: 'Article Two | Lavanya sanagavarapu',
+        heading: 'Article two',
+        date: 'feb 14, 2018',
+        content: `
+                   <p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
                 </p>
                  <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
-                </p>
-                
-                 <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle.
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
                 </p>
                  <p>
-                    This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. This is the actual content of my first atricle. 
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
+                </p>
+                 <p>
+                    This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.This is the actual content of my second atricle.
                 </p>`
+    },
+    `article-three = {
+        title: 'Article Three | Lavanya sanagavarapu',
+        heading: 'Article three',
+        date: 'feb 14, 2018',
+        content: `
+                <p>
+                    This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                 </p>
+                 <p>
+                    This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                 </p>
+                 <p>
+                    This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle. 
+                </p>
+                <p>
+                    This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.This is the actual content of my third atricle.
+                 </p>`
+     }
 };
+    
 
 function createTemplate (data) {
     var title = data.title;
@@ -72,18 +110,10 @@ app.get('/', function (req, res) {
 
 app.get('/:articles', function (req, res) {
    
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(articles([article-one])));
 });
 
-app.get('/article-two', function (req, res) {
-   
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
 
-app.get('/article-three', function (req, res) {
-   
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
